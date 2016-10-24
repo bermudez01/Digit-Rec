@@ -121,5 +121,14 @@ a=preprocessing.normalize(test)
 ranf.predict(a)
 b= ranf.predict(a)
 #%% Write 
-#b.to_csv("/Users/undergroundking8o8/Downloads/Digit/sample_submission.csv")
+import csv
+#p.to_csv("/Users/undergroundking8o8/Downloads/Digit/sample_submission.csv")
+#
+#fd = open('/Users/undergroundking8o8/Downloads/Digit/sample_submission.csv','a')
+#fd.write(p)
+#fd.close()
 
+ssub=pd.read_csv('/Users/undergroundking8o8/Downloads/Digit/sample_submission.csv')
+ssub['Label'] = p
+
+ssub.to_csv('list.csv', index=False)
